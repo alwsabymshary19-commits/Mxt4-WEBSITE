@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MXT4 | Official Website</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#ff1744;--bg:#070707;--card:#111;--muted:#aaa}
+html{scroll-behavior:smooth}
+body{font-family:Cairo,Arial;background:var(--bg);color:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 20% 20%,#ff17441c,transparent 40%),radial-gradient(circle at 80% 80%,#ff174411,transparent 40%)}
+header{position:sticky;top:0;z-index:100;background:#080808dd;backdrop-filter:blur(15px);padding:15px 5%;border-bottom:1px solid #222;display:flex;align-items:center;justify-content:space-between}
+.brand{font-size:25px;color:var(--red);font-weight:900;letter-spacing:2px}
+nav{display:flex;gap:10px;align-items:center}
+nav a{padding:8px 12px;border-radius:9px;color:#ccc;transition:.2s}
+nav a:hover{background:#ff174420;color:white}
+button,.btn{cursor:pointer;border:1px solid #333;background:#111;color:white;padding:11px 20px;border-radius:10px;transition:.2s}
+button:hover,.btn:hover{border-color:var(--red);transform:translateY(-2px)}
+.primary{background:var(--red);border-color:var(--red)}
+#lang{font-weight:bold;margin-inline-start:10px}
+#menu{display:none}
+.hero{min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px}
+.hero img{width:220px;max-width:70%;filter:drop-shadow(0 0 25px #ff174455);animation:float 4s infinite ease-in-out}
+.hero h1{font-size:clamp(35px,7vw,75px);font-weight:900;margin:15px 0}
+.hero h1 span{color:var(--red)}
+.hero p{max-width:650px;margin:auto;color:var(--muted);line-height:2}
+.eyebrow{color:var(--red);letter-spacing:3px;font-size:12px}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:25px}
+.section{max-width:1150px;margin:auto;padding:75px 22px}
+.heading{text-align:center;margin-bottom:30px}
+.heading small{color:var(--red);letter-spacing:3px}
+.heading h2{font-size:clamp(28px,5vw,43px);margin:8px}
+.heading p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{background:#111a;border:1px solid #292929;border-radius:18px;padding:25px;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:#ff174477}
+.card p{color:var(--muted);line-height:1.9;margin-top:8px}
+.icon{font-size:42px;background:#22000b;padding:25px;border-radius:12px;text-align:center;margin-bottom:15px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
+.about img{width:100%;max-width:350px;display:block;margin:auto}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+.chip{border:1px solid #ff174433;border-radius:30px;padding:5px 12px;color:#ff647e}
+.goals .card{text-align:center}
+.goals strong{font-size:32px;color:var(--red);display:block}
+.social{display:flex;justify-content:space-between;align-items:center}
+.social h3{margin-bottom:5px}
+.social p{font-size:13px}
+.social .icon{font-size:20px;margin:0}
+.contact{text-align:center}
+.form{max-width:650px;margin:25px auto;background:#111;border:1px solid #292929;padding:25px;border-radius:18px;text-align:start}
+label{display:block;margin:10px 0}
+input,textarea{width:100%;background:#080808;border:1px solid #333;color:white;border-radius:10px;padding:12px;outline:none}
+input:focus,textarea:focus{border-color:var(--red)}
+textarea{min-height:130px;resize:vertical}
+.status{margin-top:12px;color:#aaa;min-height:24px}
+footer{text-align:center;padding:35px;border-top:1px solid #222;color:#777}
+footer b{color:var(--red)}
+#top{position:fixed;bottom:20px;right:20px;display:none;z-index:99}
+#top.show{display:block}
+#intro{position:fixed;inset:0;background:#050505;display:flex;justify-content:center;align-items:center;z-index:5000;text-align:center;transition:.6s}
+#intro.hide{opacity:0;visibility:hidden}
+#intro img{width:180px;animation:float 2s infinite}
+#intro h2{color:var(--red);letter-spacing:5px}
+@keyframes float{50%{transform:translateY(-10px)}}
+@media(max-width:800px){
+#menu{display:block}
+nav{display:none;position:absolute;top:100%;left:0;right:0;background:#080808;flex-direction:column;padding:15px}
+nav.open{display:flex}
+nav a{width:100%;text-align:center}
+.about{grid-template-columns:1fr;text-align:center}
+.grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.hero img{width:180px}.section{padding:50px 17px}}
+</style>
+</head>
+
+<body>
+
+<div id="intro">
+<div>
+<img src="logo.webp" alt="MXT4">
+<h2>MXT4</h2>
+<p data-ar="أهلاً بك في عالمي" data-en="WELCOME TO MY WORLD">أهلاً بك في عالمي</p>
+</div>
+</div>
+
+<header>
+<a class="brand" href="#home">MXT4</a>
+<button id="lang">EN</button>
+<button id="menu">☰</button>
+<nav id="nav">
+<a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+<a href="#about" data-ar="من أنا" data-en="About">من أنا</a>
+<a href="#content" data-ar="المحتوى" data-en="Content">المحتوى</a>
+<a href="#goals" data-ar="أهدافي" data-en="Goals">أهدافي</a>
+<a href="#social" data-ar="حساباتي" data-en="Socials">حساباتي</a>
+<a href="#contact" data-ar="اقتراحات" data-en="Suggestions">اقتراحات</a>
+</nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div>
+<img src="logo.webp" alt="MXT4">
+<div class="eyebrow">OFFICIAL CREATOR WEBSITE</div>
+<h1><span data-ar="أهلاً بك في عالم" data-en="Welcome to">أهلاً بك في عالم</span> MXT4</h1>
+<p data-ar="ألعاب، تحديات، بثوث وتجارب مختلفة. هذه مو مجرد قناة… هذه رحلة نبنيها مع بعض، خطوة بخطوة، لين نوصل للقمة."
+data-en="Gaming, challenges, streams and new experiences. This is more than a channel — it's a journey we build together.">
+ألعاب، تحديات، بثوث وتجارب مختلفة. هذه مو مجرد قناة… هذه رحلة نبنيها مع بعض، خطوة بخطوة، لين نوصل للقمة.</p>
+<div class="actions">
+<a class="btn primary" href="https://www.youtube.com/@Mxt_4" target="_blank">▶ <span data-ar="شاهد قناتي" data-en="My YouTube">شاهد قناتي</span></a>
+<a class="btn" href="https://kick.com/mxt-4" target="_blank">◉ <span data-ar="تابع البثوث" data-en="Watch Streams">تابع البثوث</span></a>
+<button onclick="shareSite()" data-ar="شارك الموقع ↗" data-en="Share ↗">شارك الموقع ↗</button>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="grid">
+<div class="card" style="text-align:center"><h2>MXT4</h2><p data-ar="هوية صانع محتوى" data-en="Creator Identity">هوية صانع محتوى</p></div>
+<div class="card" style="text-align:center"><h2>GAMING</h2><p data-ar="ألعاب وتحديات" data-en="Gaming & Challenges">ألعاب وتحديات</p></div>
+<div class="card" style="text-align:center"><h2>∞</h2><p data-ar="طموح بلا حدود" data-en="Unlimited Ambition">طموح بلا حدود</p></div>
+</div>
+</section>
+
+<section class="section" id="about">
+<div class="heading">
+<small>ABOUT ME</small>
+<h2 data-ar="من هو MXT4؟" data-en="Who is MXT4?">من هو MXT4؟</h2>
+<p data-ar="تعرف على صاحب المحتوى" data-en="Meet the creator">تعرف على صاحب المحتوى</p>
+</div>
+<div class="card about">
+<div><img src="logo.webp" alt="MXT4"></div>
+<div>
+<h2>أنا <span style="color:var(--red)">MXT4</span></h2>
+<p data-ar="صانع محتوى ألعاب، أحب التحديات والتجارب الجديدة والبث المباشر."
+data-en="Gaming content creator who enjoys challenges, new experiences and livestreaming.">
+صانع محتوى ألعاب، أحب التحديات والتجارب الجديدة والبث المباشر.</p>
+<p data-ar="أطمح لبناء مجتمع جميل، وتقديم محتوى يستمتع فيه الجميع، وتطوير قناتي خطوة بخطوة. القادم أكبر بإذن الله."
+data-en="I aim to build a great community, create content everyone enjoys, and grow my channel step by step.">
+أطمح لبناء مجتمع جميل، وتقديم محتوى يستمتع فيه الجميع، وتطوير قناتي خطوة بخطوة. القادم أكبر بإذن الله.</p>
+<div class="chips"><span class="chip">Gaming</span><span class="chip">Creator</span><span class="chip">Streaming</span><span class="chip">Mxt4 Family</span></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="content">
+<div class="heading">
+<small>MY CONTENT</small>
+<h2 data-ar="محتواي" data-en="My Content">محتواي</h2>
+<p data-ar="اختَر نوع المحتوى واكتشفه" data-en="Choose and explore">اختَر نوع المحتوى واكتشفه</p>
+</div>
+<div class="grid">
+<div class="card"><div class="icon">🎮</div><h3>Gaming</h3><p data-ar="تجارب ألعاب، لحظات ممتعة ومغامرات جديدة." data-en="Gaming experiences, fun moments and new adventures.">تجارب ألعاب، لحظات ممتعة ومغامرات جديدة.</p><a href="https://www.youtube.com/@Mxt_4" target="_blank" style="color:var(--red)" data-ar="اكتشف ←" data-en="Explore ←">اكتشف ←</a></div>
+<div class="card"><div class="icon">🔥</div><h3>Challenges</h3><p data-ar="تحديات مختلفة وأفكار وتجارب جديدة." data-en="Different challenges and new ideas.">تحديات مختلفة وأفكار وتجارب جديدة.</p><a href="https://www.youtube.com/@Mxt_4" target="_blank" style="color:var(--red)" data-ar="اكتشف ←" data-en="Explore ←">اكتشف ←</a></div>
+<div class="card"><div class="icon">📡</div><h3>Live Streaming</h3><p data-ar="تابع البثوث وشاركنا اللعب واللحظات." data-en="Join the streams and share the fun.">تابع البثوث وشاركنا اللعب واللحظات.</p><a href="https://kick.com/mxt-4" target="_blank" style="color:var(--red)" data-ar="مشاهدة البث ←" data-en="Watch ←">مشاهدة البث ←</a></div>
+</div>
+</section>
+
+<section class="section goals" id="goals">
+<div class="heading">
+<small>THE DREAM</small>
+<h2 data-ar="أهدافي" data-en="My Goals">أهدافي</h2>
+<p data-ar="كل حلم يبدأ بخطوة" data-en="Every dream starts with a step">كل حلم يبدأ بخطوة</p>
+</div>
+<div class="grid">
+<div class="card"><strong>1K</strong><p data-ar="ألف مشترك" data-en="1K Subscribers">ألف مشترك</p></div>
+<div class="card"><strong>100K</strong><p data-ar="100 ألف مشترك" data-en="100K Subscribers">100 ألف مشترك</p></div>
+<div class="card"><strong>1M</strong><p data-ar="مليون مشترك" data-en="1M Subscribers">مليون مشترك</p></div>
+</div>
+</section>
+
+<section class="section" id="social">
+<div class="heading">
+<small>FOLLOW ME</small>
+<h2 data-ar="حساباتي الرسمية" data-en="Official Accounts">حساباتي الرسمية</h2>
+<p data-ar="اختَر المنصة وتابعني" data-en="Choose a platform and follow">اختَر المنصة وتابعني</p>
+</div>
+<div class="grid">
+<a class="card social" href="https://www.youtube.com/@Mxt_4" target="_blank"><div><h3>YouTube</h3><p>@Mxt_4</p></div><div class="icon">YT</div></a>
+<a class="card social" href="https://kick.com/mxt-4" target="_blank"><div><h3>Kick</h3><p>mxt-4</p></div><div class="icon">K</div></a>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="heading">
+<small>CONTACT & IDEAS</small>
+<h2 data-ar="عندك اقتراح؟" data-en="Have a Suggestion?">عندك اقتراح؟</h2>
+<p data-ar="اقتراحك خاص وما يظهر للزوار" data-en="Your suggestion is private">اقتراحك خاص وما يظهر للزوار</p>
+</div>
+<div class="card contact">
+<h2 data-ar="خلّنا نطور Mxt4 Family مع بعض" data-en="Let's grow Mxt4 Family together">خلّنا نطور Mxt4 Family مع بعض</h2>
+<p data-ar="اكتب فكرتك تحت وبتوصل بشكل خاص." data-en="Write your idea below and submit privately.">اكتب فكرتك تحت وبتوصل بشكل خاص.</p>
+</div>
+
+<form class="form" id="suggestionForm">
+<label data-ar="اسمك (اختياري)" data-en="Your name (optional)">اسمك (اختياري)</label>
+<input id="nickname" maxlength="40" placeholder="اكتب اسمك أو اتركه فارغاً" data-ar-placeholder="اكتب اسمك أو اتركه فارغاً" data-en-placeholder="Your name or leave blank">
+<label data-ar="اقتراحك" data-en="Your Suggestion">اقتراحك</label>
+<textarea id="suggestion" maxlength="1000" required placeholder="اكتب اقتراحك هنا..." data-ar-placeholder="اكتب اقتراحك هنا..." data-en-placeholder="Write your suggestion here..."></textarea>
+<button class="primary" type="submit" data-ar="إرسال الاقتراح ✉" data-en="Send Suggestion ✉">إرسال الاقتراح ✉</button>
+<div class="status" id="status"></div>
+</form>
+</section>
+
+</main>
+
+<footer>
+<b>MXT4</b>
+<p>© <span id="year"></span> MXT4 — <span data-ar="جميع الحقوق محفوظة" data-en="All Rights Reserved">جميع الحقوق محفوظة</span></p>
+<p>Made with ambition.</p>
+<button onclick="copyName()" style="margin-top:15px" data-ar="نسخ اسم Mxt4" data-en="Copy Mxt4">نسخ اسم Mxt4</button>
+</footer>
+
+<button id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ===================================
+   اللغة عربي / إنجليزي
+=================================== */
+function setLanguage(language){
+ document.documentElement.lang=language;
+ document.documentElement.dir=language==="en"?"ltr":"rtl";
+ document.getElementById("lang").textContent=language==="en"?"AR":"EN";
+
+ document.querySelectorAll("[data-ar][data-en]").forEach(el=>{
+  el.textContent=el.dataset[language];
+ });
+
+ document.querySelectorAll("[data-ar-placeholder][data-en-placeholder]").forEach(el=>{
+  el.placeholder=el.dataset[language+"-placeholder"];
+ });
+
+ localStorage.setItem("mxt4_language",language);
+}
+document.getElementById("lang").onclick=()=>{
+ setLanguage(document.documentElement.lang==="ar"?"en":"ar");
+};
+setLanguage(localStorage.getItem("mxt4_language")||"ar");
+
+/* القائمة بالجوال */
+document.getElementById("menu").onclick=()=>{
+ document.getElementById("nav").classList.toggle("open");
+};
+document.querySelectorAll("nav a").forEach(a=>{
+ a.onclick=()=>document.getElementById("nav").classList.remove("open");
+});
+
+/* شاشة البداية */
+setTimeout(()=>document.getElementById("intro").classList.add("hide"),1500);
+
+/* السنة */
+document.getElementById("year").textContent=new Date().getFullYear();
+
+/* نسخ الاسم */
+function copyName(){
+ navigator.clipboard.writeText("Mxt4").then(()=>{
+  alert(document.documentElement.lang==="en"?"Copied!":"تم نسخ الاسم!");
+ });
+}
+
+/* مشاركة الموقع */
+async function shareSite(){
+ if(navigator.share){
+  try{await navigator.share({title:"MXT4",url:location.href})}catch(e){}
+ }else{
+  navigator.clipboard.writeText(location.href);
+  alert(document.documentElement.lang==="en"?"Link copied":"تم نسخ الرابط");
+ }
+}
+
+/* زر الأعلى */
+window.addEventListener("scroll",()=>{
+ document.getElementById("top").classList.toggle("show",scrollY>400);
+});
+
+/* ===================================
+   FIREBASE - الاقتراحات الخاصة
+   حط بيانات مشروع Firebase مكان النصوص
+=================================== */
+
+const FIREBASE_API_KEY="PUT_YOUR_FIREBASE_API_KEY";
+const FIREBASE_PROJECT_ID="PUT_YOUR_FIREBASE_PROJECT_ID";
+
+document.getElementById("suggestionForm").addEventListener("submit",async function(e){
+ e.preventDefault();
+
+ const status=document.getElementById("status");
+ const btn=this.querySelector("button");
+ const nickname=document.getElementById("nickname").value.trim();
+ const suggestion=document.getElementById("suggestion").value.trim();
+ const english=document.documentElement.lang==="en";
+
+ if(!suggestion)return;
+
+ if(FIREBASE_API_KEY.startsWith("PUT_")||FIREBASE_PROJECT_ID.startsWith("PUT_")){
+  status.textContent=english?"Firebase is not configured yet.":"لازم تضيف بيانات Firebase أول.";
+  return;
+ }
+
+ btn.disabled=true;
+ status.textContent=english?"Sending...":"جاري الإرسال...";
+
+ try{
+  const url=`https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents/suggestions?key=${FIREBASE_API_KEY}`;
+
+  const body={
+   fields:{
+    nickname:{stringValue:nickname},
+    suggestion:{stringValue:suggestion},
+    createdAt:{timestampValue:new Date().toISOString()}
+   }
+  };
+
+  const response=await fetch(url,{
+   method:"POST",
+   headers:{"Content-Type":"application/json"},
+   body:JSON.stringify(body)
+  });
+
+  if(!response.ok)throw new Error("Firebase error");
+
+  status.textContent=english?"Suggestion sent successfully!":"وصل اقتراحك بنجاح ❤️";
+  this.reset();
+
+ }catch(error){
+  status.textContent=english?"Failed to send. Check Firebase settings.":"ما انرسل، تأكد من إعداد Firebase.";
+ }finally{
+  btn.disabled=false;
+ }
+});
+</script>
+</body>
+</html>
